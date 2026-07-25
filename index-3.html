@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Mustard Oil — Our Identity is Pakistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --field-green:#1F4D2C;
+    --field-green-dark:#123219;
+    --mustard-gold:#E8B923;
+    --oil-amber:#B5651D;
+    --cream:#FBF6E9;
+    --ink:#1A1A12;
+    --ink-soft:#4A4A3C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+
+  /* ---- Oil pour divider (signature element) ---- */
+  .pour-divider{
+    position:relative;
+    height:64px;
+    width:100%;
+    overflow:hidden;
+    background:var(--cream);
+  }
+  .pour-divider svg{width:100%;height:100%;display:block;}
+  .pour-drop{
+    transform-origin:center;
+    animation:drip 3.5s ease-in-out infinite;
+  }
+  @keyframes drip{
+    0%,100%{transform:translateY(0) scaleY(1);}
+    50%{transform:translateY(6px) scaleY(1.08);}
+  }
+
+  /* ---- Nav ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--field-green);
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:3px solid var(--mustard-gold);
+  }
+  .brand{
+    color:var(--cream);
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--mustard-gold);}
+  nav a{
+    color:var(--cream);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    margin-left:22px;
+  }
+  nav a:hover{color:var(--mustard-gold);}
+  .nav-links{display:flex;align-items:center;}
+  @media (max-width:640px){
+    .nav-links a:not(.cta-nav){display:none;}
+  }
+  .cta-nav{
+    background:var(--mustard-gold);
+    color:var(--field-green-dark) !important;
+    padding:8px 16px;
+    border-radius:2px;
+    font-weight:700 !important;
+  }
+
+  /* ---- Hero ---- */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(160deg,var(--field-green-dark) 0%, var(--field-green) 55%, #2b5f38 100%);
+    overflow:hidden;
+    padding:60px 24px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle at 15% 85%, rgba(232,185,35,0.18), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(232,185,35,0.12), transparent 35%);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    max-width:1180px;
+    margin:0 auto;
+    align-items:center;
+    width:100%;
+  }
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;text-align:center;}
+    .hero-photo{order:-1;max-width:260px;margin:0 auto;}
+  }
+  .eyebrow{
+    color:var(--mustard-gold);
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:inline-block;
+  }
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.05;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--mustard-gold);
+  }
+  .hero p{
+    color:#DCE7DE;
+    font-size:17px;
+    line-height:1.6;
+    max-width:480px;
+    margin-bottom:32px;
+  }
+  @media (max-width:900px){ .hero p{margin-left:auto;margin-right:auto;} }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  @media (max-width:900px){ .hero-ctas{justify-content:center;} }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--mustard-gold);color:var(--field-green-dark);}
+  .btn-primary:hover{background:#f4c93e;}
+  .btn-outline{border-color:var(--mustard-gold);color:var(--cream);}
+  .btn-outline:hover{background:rgba(232,185,35,0.1);}
+  .hero-photo{
+    position:relative;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+    border:1px solid rgba(232,185,35,0.35);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .seal{
+    position:absolute;
+    top:14px;right:14px;
+    background:var(--cream);
+    color:var(--field-green-dark);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.05em;
+    padding:6px 10px;
+    border-radius:2px;
+    text-transform:uppercase;
+  }
+
+  section{padding:80px 24px;}
+  .section-inner{max-width:1180px;margin:0 auto;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--oil-amber);
+    margin-bottom:12px;
+    display:block;
+  }
+  .section-head h2{
+    font-size:clamp(28px,4vw,40px);
+    color:var(--field-green-dark);
+    line-height:1.15;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    margin-top:14px;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  /* ---- Process (seed to bottle) ---- */
+  .process{background:var(--field-green-dark);}
+  .process .section-head h2{color:var(--cream);}
+  .process .section-head p{color:#C7D4CB;}
+  .process .section-eyebrow{color:var(--mustard-gold);}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    position:relative;
+  }
+  @media (max-width:900px){ .steps{grid-template-columns:1fr;gap:28px;} }
+  .steps::before{
+    content:"";
+    position:absolute;
+    top:22px;left:0;right:0;
+    height:2px;
+    background:linear-gradient(90deg, transparent, var(--mustard-gold) 10%, var(--mustard-gold) 90%, transparent);
+    opacity:0.4;
+  }
+  @media (max-width:900px){ .steps::before{display:none;} }
+  .step{position:relative;padding-right:20px;}
+  .step-num{
+    width:44px;height:44px;
+    border-radius:50%;
+    background:var(--mustard-gold);
+    color:var(--field-green-dark);
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+    position:relative;z-index:2;
+    font-size:15px;
+  }
+  .step h3{color:var(--cream);font-size:18px;margin-bottom:8px;font-weight:600;}
+  .step p{color:#B9C7BE;font-size:14px;line-height:1.55;}
+
+  /* ---- Products gallery ---- */
+  .gallery{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:20px;
+  }
+  @media (max-width:800px){ .gallery{grid-template-columns:1fr;} }
+  .gallery-card{
+    position:relative;
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--field-green-dark);
+    box-shadow:0 12px 30px -12px rgba(0,0,0,0.25);
+  }
+  .gallery-card img{width:100%;height:100%;object-fit:cover;min-height:280px;}
+  .gallery-card .tag{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(0deg, rgba(18,50,25,0.92), transparent);
+    color:var(--cream);
+    padding:20px 16px 14px;
+    font-size:14px;
+    font-weight:600;
+  }
+
+  /* ---- Nutrition ---- */
+  .nutrition-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  @media (max-width:800px){ .nutrition-wrap{grid-template-columns:1fr;} }
+  .nutri-table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    background:var(--cream);
+    border:1px solid #E3D9BE;
+  }
+  .nutri-table caption{
+    text-align:left;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding:14px 16px;
+    background:#F1E9D2;
+  }
+  .nutri-table td{
+    padding:12px 16px;
+    border-bottom:1px solid #E3D9BE;
+  }
+  .nutri-table td:last-child{text-align:right;font-weight:600;color:var(--field-green-dark);}
+  .nutri-table tr:last-child td{border-bottom:none;}
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+  .badge{
+    font-size:12px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:2px;
+    background:var(--field-green);
+    color:var(--cream);
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.03em;
+  }
+
+  /* ---- Buyers split (B2C vs Restaurant) ---- */
+  .buyers{background:#F1E9D2;}
+  .buyer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  @media (max-width:800px){ .buyer-grid{grid-template-columns:1fr;} }
+  .buyer-card{
+    background:var(--cream);
+    border:1px solid #E3D9BE;
+    border-radius:4px;
+    padding:36px 32px;
+    position:relative;
+  }
+  .buyer-card.highlight{
+    border-color:var(--mustard-gold);
+    border-width:2px;
+  }
+  .buyer-card .icon-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--oil-amber);
+    margin-bottom:14px;
+    display:block;
+  }
+  .buyer-card h3{font-size:24px;color:var(--field-green-dark);margin-bottom:12px;}
+  .buyer-card p{color:var(--ink-soft);font-size:15px;line-height:1.6;margin-bottom:22px;}
+  .buyer-card ul{list-style:none;margin-bottom:24px;}
+  .buyer-card li{
+    font-size:14px;
+    color:var(--ink);
+    padding:9px 0;
+    border-bottom:1px dashed #DCD1AF;
+    display:flex;
+    justify-content:space-between;
+  }
+  .buyer-card li:last-child{border-bottom:none;}
+  .buyer-card li span:last-child{color:var(--ink-soft);font-family:'JetBrains Mono',monospace;font-size:13px;}
+
+  /* ---- Footer ---- */
+  footer{
+    background:var(--field-green-dark);
+    color:#C7D4CB;
+    padding:56px 24px 30px;
+  }
+  .footer-inner{
+    max-width:1180px;margin:0 auto;
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:40px;
+  }
+  @media (max-width:800px){ .footer-inner{grid-template-columns:1fr;} }
+  footer h4{
+    color:var(--mustard-gold);
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+    font-weight:600;
+  }
+  footer p, footer a{font-size:14px;line-height:1.7;color:#C7D4CB;text-decoration:none;}
+  footer a:hover{color:var(--mustard-gold);}
+  .footer-bottom{
+    max-width:1180px;margin:0 auto;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:24px;
+    font-size:12px;
+    color:#8FA396;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  .fade-in{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Pakistan <span>Mustard Oil</span></div>
+  <div class="nav-links">
+    <a href="#process">Process</a>
+    <a href="#products">Product</a>
+    <a href="#buyers">Order</a>
+    <a class="cta-nav" href="#buyers">Bulk Order</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">100% Natural &middot; Cold Pressed</span>
+      <h1>Our identity<br>is <em>Pakistan.</em></h1>
+      <p>Pure mustard oil, pressed from Pakistani soil for Pakistani kitchens — and now for restaurant kitchens that need reliable quality without the wait of a credit cycle.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#buyers">Order for your restaurant</a>
+        <a class="btn btn-outline" href="#products">See the product</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <span class="seal">1L × 6 Carton</span>
+      <img src="images/1000509189.jpg" alt="Pakistan Mustard Oil carton front, English label">
+    </div>
+  </div>
+</section>
+
+<div class="pour-divider">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none">
+    <path d="M0,32 Q300,10 600,32 T1200,32" fill="none" stroke="#E8B923" stroke-width="2" opacity="0.5"/>
+    <circle class="pour-drop" cx="600" cy="32" r="5" fill="#B5651D"/>
+  </svg>
+</div>
+
+<section class="process" id="process">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-eyebrow">Seed to bottle</span>
+      <h2>Four steps, one family legacy.</h2>
+      <p>Seventy-plus years of oil-seed processing behind every carton — no shortcuts between the field and the kitchen.</p>
+    </div>
+    <div class="steps fade-in">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Sourced</h3>
+        <p>Mustard seed from Pakistani growing regions, selected for oil content and purity.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Pressed</h3>
+        <p>Extracted without chemical solvents, keeping the natural pungency and nutrient profile intact.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Checked</h3>
+        <p>Batch-tested for fat composition and stability before it ever reaches a carton.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Packed</h3>
+        <p>Sealed 1L × 6 cartons, best before 9 months when stored away from heat and light.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-eyebrow">The product</span>
+      <h2>What ships in every carton.</h2>
+      <p>English and Urdu labelling, sealed for retail shelf or restaurant storeroom.</p>
+    </div>
+    <div class="gallery fade-in">
+      <div class="gallery-card">
+        <img src="images/1000509189.jpg" alt="Pakistan Mustard Oil box, English branding, green and gold packaging">
+        <div class="tag">Front label — English</div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/1000509197.jpg" alt="Pakistan Mustard Oil box, Urdu branding سرسوں تیل">
+        <div class="tag">Front label — Urdu</div>
+      </div>
+      <div class="gallery-card">
+        <img src="images/20260726_0152169170342381518640390.jpg" alt="Reverse side of carton showing nutritional information and marketer details">
+        <div class="tag">Reverse — details</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="nutrition-wrap fade-in">
+      <div>
+        <span class="section-eyebrow">Nutrition</span>
+        <h2 style="color:var(--field-green-dark);font-size:clamp(26px,4vw,34px);margin-bottom:16px;">Approximate values, per 100g</h2>
+        <p style="color:var(--ink-soft);font-size:15px;line-height:1.6;">Straightforward, single-ingredient nutrition — no additives, nothing to disclose beyond the oil itself.</p>
+        <div class="badge-row">
+          <span class="badge">100% Natural</span>
+          <span class="badge">0g Trans Fat</span>
+          <span class="badge">9-Month Shelf Life</span>
+        </div>
+      </div>
+      <table class="nutri-table">
+        <caption>Nutritional information</caption>
+        <tr><td>Energy</td><td>899.3 kCal</td></tr>
+        <tr><td>Fat</td><td>99.93 g</td></tr>
+        <tr><td>Saturated Fatty Acids</td><td>5.8 g</td></tr>
+        <tr><td>Monounsaturated Fatty Acids</td><td>70.37 g</td></tr>
+        <tr><td>Polyunsaturated Fatty Acids</td><td>23.82 g</td></tr>
+        <tr><td>Protein</td><td>0 g</td></tr>
+        <tr><td>Trans Fatty Acids</td><td>0 g</td></tr>
+        <tr><td>Carbohydrate</td><td>0 g</td></tr>
+        <tr><td>Sugar</td><td>0 g</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="buyers" id="buyers">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-eyebrow">How to order</span>
+      <h2>Pick the size that fits your kitchen.</h2>
+      <p>Retail cartons for the home. Cash-basis bulk supply for restaurants — no credit terms, no waiting on invoices.</p>
+    </div>
+    <div class="buyer-grid fade-in">
+      <div class="buyer-card">
+        <span class="icon-tag">Home / Retail</span>
+        <h3>For your kitchen</h3>
+        <p>Standard 1L × 6 carton, same quality as every batch that leaves the press.</p>
+        <ul>
+          <li><span>Pack size</span><span>1L × 6</span></li>
+          <li><span>Payment</span><span>Cash on order</span></li>
+          <li><span>Shelf life</span><span>9 months</span></li>
+        </ul>
+        <a class="btn btn-primary" style="width:100%;justify-content:center;background:var(--field-green);color:var(--cream);" href="https://wa.me/923006928033?text=Assalam-o-Alaikum%2C%20mujhe%20Pakistan%20Mustard%20Oil%20retail%20carton%20order%20karni%20hai." target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <div class="buyer-card highlight">
+        <span class="icon-tag">Restaurant / Bulk</span>
+        <h3>For your kitchen line</h3>
+        <p>Cash-basis bulk supply sized for one restaurant's steady use — built for repeat orders, not one giant contract.</p>
+        <ul>
+          <li><span>Pack size</span><span>Bulk cans, by request</span></li>
+          <li><span>Payment</span><span>Cash on delivery</span></li>
+          <li><span>Credit terms</span><span>Not offered</span></li>
+        </ul>
+        <a class="btn btn-primary" style="width:100%;justify-content:center;" href="https://wa.me/923006928033?text=Assalam-o-Alaikum%2C%20main%20restaurant%20k%20liye%20Pakistan%20Mustard%20Oil%20bulk%20order%20(cash%20basis)%20karna%20chahta%2Fchahti%20hun." target="_blank" rel="noopener">Enquire for restaurant supply</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Pakistan Mustard Oil</h4>
+      <p>Our identity is Pakistan — pressed and packed under the I Can Enterprises umbrella, for kitchens that expect it plain and unmixed.</p>
+    </div>
+    <div>
+      <h4>Marketed by</h4>
+      <p>I Can Enterprises Pvt. Ltd.<br>Mian G.T Road, Gujar Khan,<br>Rawalpindi, Pakistan</p>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <p><a href="https://wa.me/923006928033" target="_blank" rel="noopener">+92 300 6928033</a><br>Cash-basis orders, retail &amp; restaurant.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Pakistan Mustard Oil — marketed by I Can Enterprises Pvt. Ltd.</span>
+    <span>100% Natural &middot; No credit terms</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.15});
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
