@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakistan Mustard Oil — Our Identity is Pakistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --field-green:#1F4D2C;
+    --field-green-dark:#123219;
+    --mustard-gold:#E8B923;
+    --oil-amber:#B5651D;
+    --cream:#FBF6E9;
+    --ink:#1A1A12;
+    --ink-soft:#4A4A3C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden;}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}}
+  h1,h2,h3{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--field-green);
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:3px solid var(--mustard-gold);
+  }
+  .brand{color:var(--cream);font-family:'Fraunces',serif;font-weight:700;font-size:19px;}
+  .brand span{color:var(--mustard-gold);}
+  nav a{color:var(--cream);text-decoration:none;font-size:14px;font-weight:500;margin-left:22px;}
+  nav a:hover{color:var(--mustard-gold);}
+  @media (max-width:640px){ nav a{display:none;} }
+
+  .hero{
+    position:relative;
+    min-height:60vh;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    background:linear-gradient(160deg,var(--field-green-dark) 0%, var(--field-green) 55%, #2b5f38 100%);
+    padding:70px 24px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 15% 85%, rgba(232,185,35,0.18), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(232,185,35,0.12), transparent 35%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:640px;}
+  .eyebrow{color:var(--mustard-gold);font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:18px;display:inline-block;}
+  .hero h1{color:var(--cream);font-size:clamp(36px,7vw,60px);line-height:1.05;font-weight:700;margin-bottom:20px;}
+  .hero h1 em{font-style:normal;color:var(--mustard-gold);}
+  .hero p{color:#DCE7DE;font-size:17px;line-height:1.6;margin:0 auto 32px;max-width:480px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid transparent;transition:transform 0.15s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--mustard-gold);color:var(--field-green-dark);}
+  .btn-primary:hover{background:#f4c93e;}
+
+  section{padding:80px 24px;}
+  .section-inner{max-width:1180px;margin:0 auto;}
+  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
+  .section-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--oil-amber);margin-bottom:12px;display:block;}
+  .section-head h2{font-size:clamp(28px,4vw,40px);color:var(--field-green-dark);line-height:1.15;}
+  .section-head p{color:var(--ink-soft);margin-top:14px;font-size:16px;line-height:1.6;}
+
+  .process{background:var(--field-green-dark);}
+  .process .section-head h2{color:var(--cream);}
+  .process .section-head p{color:#C7D4CB;}
+  .process .section-eyebrow{color:var(--mustard-gold);}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  @media (max-width:900px){ .steps{grid-template-columns:1fr;gap:28px;} }
+  .steps::before{content:"";position:absolute;top:22px;left:0;right:0;height:2px;background:linear-gradient(90deg, transparent, var(--mustard-gold) 10%, var(--mustard-gold) 90%, transparent);opacity:0.4;}
+  @media (max-width:900px){ .steps::before{display:none;} }
+  .step{position:relative;padding-right:20px;}
+  .step-num{width:44px;height:44px;border-radius:50%;background:var(--mustard-gold);color:var(--field-green-dark);font-family:'JetBrains Mono',monospace;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative;z-index:2;font-size:15px;}
+  .step h3{color:var(--cream);font-size:18px;margin-bottom:8px;font-weight:600;}
+  .step p{color:#B9C7BE;font-size:14px;line-height:1.55;}
+
+  .gallery{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px;}
+  @media (max-width:800px){ .gallery{grid-template-columns:1fr;} }
+  .gallery-card{position:relative;border-radius:4px;overflow:hidden;background:var(--field-green-dark);box-shadow:0 12px 30px -12px rgba(0,0,0,0.25);}
+  .gallery-card img{width:100%;height:100%;object-fit:cover;min-height:280px;}
+  .gallery-card .tag{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg, rgba(18,50,25,0.92), transparent);color:var(--cream);padding:20px 16px 14px;font-size:14px;font-weight:600;}
+
+  .order-panel{
+    max-width:520px;margin:48px auto 0;
+    background:var(--cream);border:2px solid var(--mustard-gold);border-radius:6px;
+    padding:32px;text-align:center;
+  }
+  .order-panel .price{font-family:'Fraunces',serif;font-size:32px;color:var(--field-green-dark);font-weight:700;margin:8px 0 4px;}
+  .order-panel .price span{font-size:15px;color:var(--ink-soft);font-family:'Inter',sans-serif;font-weight:500;}
+  .order-panel p{color:var(--ink-soft);font-size:14px;margin-bottom:20px;}
+  .order-actions{display:flex;flex-direction:column;gap:12px;}
+  .btn-outline-dark{border:2px solid var(--field-green);color:var(--field-green);background:transparent;}
+  .btn-outline-dark:hover{background:rgba(31,77,44,0.06);}
+
+  .nutrition-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  @media (max-width:800px){ .nutrition-wrap{grid-template-columns:1fr;} }
+  .nutri-table{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--cream);border:1px solid #E3D9BE;}
+  .nutri-table caption{text-align:left;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);padding:14px 16px;background:#F1E9D2;}
+  .nutri-table td{padding:12px 16px;border-bottom:1px solid #E3D9BE;}
+  .nutri-table td:last-child{text-align:right;font-weight:600;color:var(--field-green-dark);}
+  .nutri-table tr:last-child td{border-bottom:none;}
+  .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+  .badge{font-size:12px;font-weight:600;padding:8px 14px;border-radius:2px;background:var(--field-green);color:var(--cream);font-family:'JetBrains Mono',monospace;letter-spacing:0.03em;}
+
+  footer{background:var(--field-green-dark);color:#C7D4CB;padding:40px 24px 26px;text-align:center;font-size:13px;line-height:1.8;}
+  footer a{color:var(--mustard-gold);}
+
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease, transform 0.7s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+
+  .wa-float{
+    position:fixed;bottom:20px;right:20px;width:58px;height:58px;
+    background:#25D366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);z-index:100;
+  }
+  .wa-float svg{width:30px;height:30px;}
+</style>
+</head>
+<body>
+
+<a class="wa-float" href="https://wa.me/923006928033?text=Assalam-o-Alaikum%2C%20mujhe%20Pakistan%20Mustard%20Oil%20order%20karni%20hai." target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.94.548 3.79 1.586 5.4L2 22l4.717-1.554A9.958 9.958 0 0 0 12.004 22C17.522 22 22 17.522 22 12.004 22 6.486 17.522 2 12.004 2zm0 18.13a8.13 8.13 0 0 1-4.14-1.13l-.297-.176-2.797.923.938-2.73-.194-.31A8.13 8.13 0 1 1 20.13 12.004a8.14 8.14 0 0 1-8.126 8.126z"/></svg>
+</a>
+
+<header>
+  <div class="brand">Pakistan <span>Mustard Oil</span></div>
+  <nav>
+    <a href="#process">Process</a>
+    <a href="#products">Product</a>
+    <a href="bulk.html">Bulk / Restaurant</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">100% Natural &middot; Cold Pressed</span>
+    <h1>Our identity<br>is <em>Pakistan.</em></h1>
+    <p>Pure mustard oil, pressed from Pakistani soil for Pakistani kitchens — one price, whether you pick it up yourself or have it delivered.</p>
+    <a class="btn btn-primary" href="#products">See the product</a>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-eyebrow">Seed to bottle</span>
+      <h2>Four steps, one family legacy.</h2>
+      <p>Seventy-plus years of oil-seed processing behind every carton — no shortcuts between the field and the kitchen.</p>
+    </div>
+    <div class="steps fade-in">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Sourced</h3>
+        <p>Mustard seed from Pakistani growing regions, selected for oil content and purity.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Pressed</h3>
+        <p>Extracted without chemical solvents, keeping the natural pungency and nutrient profile intact.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Checked</h3>
+        <p>Batch-tested for fat composition and stability before it ever reaches a carton.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Packed</h3>
+        <p>Sealed 1L × 6 cartons, best before 9 months when stored away from heat and light.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-eyebrow">The product</span>
+      <h2>What ships in every carton.</h2>
+      <p>English and Urdu labelling, sealed for retail shelf or restaurant storeroom.</p>
+    </div>
+    <div class="section-head fade-in" style="max-width:720px;">
+      <p style="font-size:15px;">Sealed 1L × 6 carton. English label on one face, Urdu (سرسوں تیل) on the other — nutrition panel and marketer details printed on the reverse. Green-and-gold packaging, 100% Natural seal, best before 9 months from packing.</p>
+    </div>
+
+    <div class="order-panel fade-in">
+      <span class="section-eyebrow" style="text-align:center;">Retail carton</span>
+      <div class="price">PKR 3,988 <span>/ 1L × 6 carton</span></div>
+      <p>Same price for pickup or delivery — no hidden distance charges. Cash basis, no credit terms.</p>
+      <div class="order-actions">
+        <a class="btn btn-primary" href="https://wa.me/923006928033?text=Assalam-o-Alaikum%2C%20mujhe%20Pakistan%20Mustard%20Oil%20retail%20carton%20order%20karni%20hai." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn btn-outline-dark" href="bulk.html">View bulk &amp; restaurant pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="nutrition-wrap fade-in">
+      <div>
+        <span class="section-eyebrow">Nutrition</span>
+        <h2 style="color:var(--field-green-dark);font-size:clamp(26px,4vw,34px);margin-bottom:16px;">Approximate values, per 100g</h2>
+        <p style="color:var(--ink-soft);font-size:15px;line-height:1.6;">Straightforward, single-ingredient nutrition — no additives, nothing to disclose beyond the oil itself.</p>
+        <div class="badge-row">
+          <span class="badge">100% Natural</span>
+          <span class="badge">0g Trans Fat</span>
+          <span class="badge">9-Month Shelf Life</span>
+        </div>
+      </div>
+      <table class="nutri-table">
+        <caption>Nutritional information</caption>
+        <tr><td>Energy</td><td>899.3 kCal</td></tr>
+        <tr><td>Fat</td><td>99.93 g</td></tr>
+        <tr><td>Saturated Fatty Acids</td><td>5.8 g</td></tr>
+        <tr><td>Monounsaturated Fatty Acids</td><td>70.37 g</td></tr>
+        <tr><td>Polyunsaturated Fatty Acids</td><td>23.82 g</td></tr>
+        <tr><td>Protein</td><td>0 g</td></tr>
+        <tr><td>Trans Fatty Acids</td><td>0 g</td></tr>
+        <tr><td>Carbohydrate</td><td>0 g</td></tr>
+        <tr><td>Sugar</td><td>0 g</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Marketed by I Can Enterprises Pvt. Ltd.<br>
+  Mian G.T Road, Gujar Khan, Rawalpindi, Pakistan<br>
+  <a href="https://wa.me/923006928033">+92 300 6928033</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.15});
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
