@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk &amp; Restaurant Orders — Pakistan Mustard Oil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --field-green:#1F4D2C;
+    --field-green-dark:#123219;
+    --mustard-gold:#E8B923;
+    --oil-amber:#B5651D;
+    --cream:#FBF6E9;
+    --ink:#1A1A12;
+    --ink-soft:#4A4A3C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;}
+  h1,h2,h3{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+
+  header{
+    background:var(--field-green);
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:3px solid var(--mustard-gold);
+  }
+  .brand{color:var(--cream);font-family:'Fraunces',serif;font-weight:700;font-size:19px;}
+  .brand span{color:var(--mustard-gold);}
+  header a.back{color:var(--cream);font-size:14px;}
+  header a.back:hover{color:var(--mustard-gold);}
+
+  .hero{
+    background:linear-gradient(160deg,var(--field-green-dark) 0%, var(--field-green) 55%, #2b5f38 100%);
+    padding:60px 24px;text-align:center;
+  }
+  .hero span.eyebrow{color:var(--mustard-gold);font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:16px;display:inline-block;}
+  .hero h1{color:var(--cream);font-size:clamp(30px,6vw,48px);line-height:1.1;font-weight:700;margin-bottom:14px;}
+  .hero h1 em{font-style:normal;color:var(--mustard-gold);}
+  .hero p{color:#DCE7DE;font-size:16px;max-width:520px;margin:0 auto;line-height:1.6;}
+
+  section{padding:56px 24px;max-width:720px;margin:0 auto;}
+
+  .price-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #E3D9BE;border-radius:4px;overflow:hidden;}
+  .price-table th{background:var(--field-green-dark);color:var(--cream);padding:14px 18px;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-align:left;font-family:'JetBrains Mono',monospace;}
+  .price-table td{padding:16px 18px;border-bottom:1px solid #E3D9BE;font-size:16px;}
+  .price-table tr:last-child td{border-bottom:none;}
+  .price-table td:last-child{text-align:right;font-weight:700;color:var(--field-green-dark);font-family:'JetBrains Mono',monospace;}
+  .price-table tr.best td{background:#F1E9D2;}
+
+  .note{background:#F1E9D2;border-left:4px solid var(--mustard-gold);padding:16px 18px;font-size:14px;color:var(--ink-soft);margin-top:20px;border-radius:2px;line-height:1.6;}
+
+  .terms{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
+  .badge{font-size:12px;font-weight:600;padding:8px 14px;border-radius:2px;background:var(--field-green);color:var(--cream);font-family:'JetBrains Mono',monospace;letter-spacing:0.03em;}
+
+  .cta-box{margin-top:40px;text-align:center;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:2px;font-weight:700;font-size:16px;background:var(--mustard-gold);color:var(--field-green-dark);}
+  .btn:hover{background:#f4c93e;}
+
+  footer{background:var(--field-green-dark);color:#C7D4CB;padding:36px 24px;text-align:center;font-size:13px;line-height:1.8;}
+  footer a{color:var(--mustard-gold);}
+
+  .wa-float{
+    position:fixed;bottom:20px;right:20px;width:58px;height:58px;
+    background:#25D366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);z-index:100;
+  }
+  .wa-float svg{width:30px;height:30px;}
+</style>
+</head>
+<body>
+
+<a class="wa-float" href="https://wa.me/923006928033?text=Assalam-o-Alaikum%2C%20main%20bulk%2Frestaurant%20order%20k%20liye%20Pakistan%20Mustard%20Oil%20ki%20quantity%20aur%20rate%20confirm%20karna%20chahta%2Fchahti%20hun." target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.94.548 3.79 1.586 5.4L2 22l4.717-1.554A9.958 9.958 0 0 0 12.004 22C17.522 22 22 17.522 22 12.004 22 6.486 17.522 2 12.004 2zm0 18.13a8.13 8.13 0 0 1-4.14-1.13l-.297-.176-2.797.923.938-2.73-.194-.31A8.13 8.13 0 1 1 20.13 12.004a8.14 8.14 0 0 1-8.126 8.126z"/></svg>
+</a>
+
+<header>
+  <div class="brand">Pakistan <span>Mustard Oil</span></div>
+  <a class="back" href="index.html">&larr; Home</a>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Bulk &amp; Restaurant Orders</span>
+  <h1>One rate ladder,<br>for <em>everyone.</em></h1>
+  <p>Whether you run a restaurant kitchen or just want a bigger stock — the price drops the same way for anyone buying more. Cash basis only, no credit terms, no distance-based charges.</p>
+</div>
+
+<section>
+  <table class="price-table">
+    <tr><th>Quantity</th><th>Price / Carton (1L × 6)</th></tr>
+    <tr><td>1–11 cartons</td><td>PKR 3,988</td></tr>
+    <tr class="best"><td>12–36 cartons</td><td>PKR 3,600</td></tr>
+    <tr class="best"><td>36+ cartons</td><td>PKR 3,360</td></tr>
+  </table>
+
+  <div class="note">
+    Restaurants ordering on a repeat, steady basis qualify for the same tiered pricing as any other bulk buyer — there's no separate restaurant rate. Order more, pay less per carton, whether it's for one big kitchen or a family stocking up for the year.
+  </div>
+
+  <div class="terms">
+    <span class="badge">Cash on delivery</span>
+    <span class="badge">No credit terms</span>
+    <span class="badge">Same price, pickup or delivery</span>
+  </div>
+
+  <div class="cta-box">
+    <a class="btn" href="https://wa.me/923006928033?text=Assalam-o-Alaikum%2C%20main%20bulk%2Frestaurant%20order%20k%20liye%20Pakistan%20Mustard%20Oil%20ki%20quantity%20aur%20rate%20confirm%20karna%20chahta%2Fchahti%20hun." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  Marketed by I Can Enterprises Pvt. Ltd.<br>
+  Mian G.T Road, Gujar Khan, Rawalpindi, Pakistan<br>
+  <a href="https://wa.me/923006928033">+92 300 6928033</a>
+</footer>
+
+</body>
+</html>
